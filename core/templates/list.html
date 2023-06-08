@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presenca</title>
+</head>
+<body>
+    {% if not dados %}
+    <h1>Sem presenças cadastradas</h1>
+    {% else %}
+    <h1>Lista de presença:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Aluno</th>
+                <th>Nome do Professor</th>
+                <th>Curso</th>
+                <th>Semestre</th>
+                <th>Data de Presença</th>
+            </tr>
+        </thead>
+        {% endif %}
+        <tbody id="Presenca">
+            {% for dado in dados %}
+            <tr>
+                <td>{{ dado.NomeAluno }}</td>
+                <td>{{ dado.NomeProfessor }}</td>
+                <td>{{ dado.NomeCurso }}</td>
+                <td>{{ dado.Semestre }}</td>
+                <td>{{ dado.DataPresenca }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/"><button>Cadastro</button></a>
+
+
+</body>
+</html>

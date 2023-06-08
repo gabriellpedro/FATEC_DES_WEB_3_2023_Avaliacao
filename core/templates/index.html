@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Presença</title>
+</head>
+<body>
+    <form action={% url 'core:index' %} method="post">
+        {% csrf_token %}
+        <h1>Registro Presença</h1>
+        <div>
+            <label for="NomeAluno">Nome Completo:</label>
+            <input type="text" name="NomeAluno" id="NomeAluno">
+        </div>
+        <div>
+            <label for="NomeProfessor">Nome do Professor:</label>
+            <select name="NomeProfessor" id="NomeProfessor">
+                <option value="Orlando">Profº Orlando Saraiva</option>
+                <option value="Thiago">Profº Thiago Mendes</option>
+                <option value="Esdras">Profº Esdras Bezerra</option>
+            </select>
+        </div>
+        <div>
+            <label for="Curso">Curso:</label>
+            <select name="Curso" id="Curso">
+                <option value="DSM">Desenvolvimento de Software Multiplataforma</option>
+                <option value="GE">Gestão Empresarial</option>
+                <option value="SI">Sistema para Internet</option>
+            </select>
+        </div>
+        <div>
+            <label for="Semestre">Semestre:</label>
+            <select name="Semestre" id="Semestre">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+        <div>
+            <label for="DataPresenca">Data da Presença</label>
+            <input type="date" name="DataPresenca" id="DataPresenca">
+        </div>
+
+        <button type="submit" value="Cadastro" >Enviar</button>
+
+    </form>
+    <a href="lista"><button>Listagem</button></a>
+</body>
+</html>
