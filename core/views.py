@@ -11,7 +11,6 @@ def index(request):
     }
 
     if request.method == 'POST':
-        print (form)
         if form.is_valid():
             form_save = Presenca(**form.cleaned_data)
             form_save.save()
