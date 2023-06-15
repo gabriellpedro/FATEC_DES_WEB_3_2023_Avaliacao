@@ -4,7 +4,7 @@ from . import views
 app_name = 'core'
 
 urlpatterns = [
-    path('', views.CadastroPresenca, name="index"),
+    path('', views.index, name="index"),
     path('lista', views.ListaPresenca, name="lista")
     
 ]

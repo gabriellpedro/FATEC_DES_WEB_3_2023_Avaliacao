@@ -7,10 +7,11 @@
     <title>Lista de Presenca</title>
 </head>
 <body>
+    <h1>Listagem de presença</h1>
     {% if not dados %}
-    <h1>Sem presenças cadastradas</h1>
+    <h2>Sem presenças cadastradas</h2>
     {% else %}
-    <h1>Lista de presença:</h1>
+    <h2>Presenças Cadastradas:</h2>
     <table>
         <thead>
             <tr>
@@ -18,18 +19,16 @@
                 <th>Nome do Professor</th>
                 <th>Curso</th>
                 <th>Semestre</th>
-                <th>Data de Presença</th>
             </tr>
         </thead>
         {% endif %}
         <tbody id="Presenca">
             {% for dado in dados %}
             <tr>
-                <td>{{ dado.NomeAluno }}</td>
-                <td>{{ dado.NomeProfessor }}</td>
-                <td>{{ dado.NomeCurso }}</td>
-                <td>{{ dado.Semestre }}</td>
-                <td>{{ dado.DataPresenca }}</td>
+                <td>{{ dado.nome_aluno }}</td>
+                <td>{{ dado.nome_professor }}</td>
+                <td>{{ dado.curso }}</td>
+                <td>{{ dado.semestre }}</td>
             </tr>
         {% endfor %}
         </tbody>
